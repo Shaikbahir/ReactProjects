@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.emoji-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.emoji-item {
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.emoji-face {
+    font-size: 2rem;
+}
+
+.emoji-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.emoji-describe {
+    color: #666;
+}
