@@ -1,47 +1,38 @@
-// import React from "react";
-// import Login from "./login";
-
-
-// const userdataInfo = true
-
-// function App() {
-
-//     return (
-//         <Login userdataInfoProps={userdataInfo} />
-//     );
-
-// }
-
-// export default App;//(for login form conditional statements)
-
-
 import React, { useState } from "react";
-
-var newDate = new Date()
-var now = newDate.getHours() + ":" + newDate.getMinutes() + ":" + newDate.getSeconds()
+import "../index.css"
 
 
 function App() {
-    setInterval(getTime, 1000)
-    var [time, setTime] = useState(now)
-    function getTime() {
-        var date = new Date()
-        setTime(time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds())
-        console.log(time)
-
+    var [changes, setChanges] = useState(" ");
+    var [buttonEvent, makeButtonEvent] = useState("Submit");
+    const [boolVal, setVal] = useState(false);
+    function handleClick() {
+        makeButtonEvent("submitted")
+        setChanges(changes)
     }
-    return (
-        <div>
-            <button onClick={getTime}>Time</button>
-            <h1>{time}</h1>
+    function mouseOver() {
+        setVal(true)
+    }
+    function mouseOut() {
+        setVal(false)
+    }
+    function handleChange(e) {
+       changes=e.target.value
+       console.log(changes)
+    }
 
+
+    return (
+        <div className="container">
+
+            <h1 className="heading"> Hello! {changes}</h1>
+            <input onChange={handleChange} type="text" placeholder="Enter your name" className="input" />
+            <button onMouseOver={mouseOver} onMouseOut={mouseOut} onClick={handleClick}
+                style={{ backgroundColor: boolVal && "black" }}
+                className="button"> {buttonEvent}</button>
         </div>
 
     );
+
 }
-
-
-
-
-export default App;
-
+export default App; 
